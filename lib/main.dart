@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:seclob_2/view/Home/home_page.dart';
+
+import 'view/Home/home_page.dart';
+import 'view/main_page/mainPage.dart';
 
 
 void main() {
@@ -19,8 +21,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-     // home:  MainPage(),
-      home: const HomePage(),
+     //home:  MainPage(),
+     home: const HomePage(),
     );
   }
 }

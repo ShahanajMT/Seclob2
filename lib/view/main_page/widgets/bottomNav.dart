@@ -19,7 +19,7 @@ class BottomNavigation extends StatelessWidget {
             indexChangeNotifier.value = index;
           },
           type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.red,
           selectedItemColor: const Color.fromARGB(255, 66, 112, 191),
           unselectedItemColor: Colors.grey,
           selectedIconTheme: const IconThemeData(color: Colors.black),

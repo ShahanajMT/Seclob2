@@ -4,5 +4,5 @@ const kProfileImage = 'https://imgs.search.brave.com/gxJ-fW7q71Wdlzc1ddKoafgQ0U9
 
 
 
-Color myIndicoColor = Color(0x1E3167); 
-Color myLighrIndigoColor = Color(0x2C5390);
+Color myIndicoColor = const Color(0x001e3167); 
+Color myLighrIndigoColor = const Color(0x002c5390);
