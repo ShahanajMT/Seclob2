@@ -17,19 +17,19 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                height: MediaQuery.of(context).size.height * 0.6,
-                width: MediaQuery.of(context).size.width,
-                color: Colors.white,
-                child: Padding(
+          child: Container(
+            // color: Colors.cyan,
+            child: Column(
+              children: [
+                Padding(
                   padding: const EdgeInsets.all(20),
                   child: Container(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 10, vertical: 10),
-                    height: 170,
-                    width: 100,
+                    height: MediaQuery.of(context).size.height * 0.48,
+                    width: MediaQuery.of(context).size.width,
+                    // height: 170,
+                    // width: 100,
                     color: Colors.white,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -67,7 +67,7 @@ class HomePage extends StatelessWidget {
                             CircleAvatar(
                                 backgroundImage:
                                     AssetImage('assets/images/Mask group.png'),
-                                radius: 60),
+                                radius: 50),
                             TTexts(text1: '50', text2: 'Post'),
                             TTexts(text1: '564', text2: 'Following'),
                             TTexts(text1: '564', text2: 'Followes'),
@@ -89,7 +89,7 @@ class HomePage extends StatelessWidget {
                         const SizedBox(height: 7),
                         TTextss(
                             text:
-                                'You are beautiful and\ni am here to capture it',
+                                "\u{1F44B}'You are beautiful and\ni am here to capture it\u{1F44B}'",
                             textColor: Colors.indigo.shade200,
                             fontWeight: FontWeight.w300,
                             size: 16),
@@ -127,8 +127,6 @@ class HomePage extends StatelessWidget {
                             const SizedBox(
                               width: 10,
                             ),
-
-                          
                             Expanded(
                               flex: 1,
                               child: Container(
@@ -137,7 +135,13 @@ class HomePage extends StatelessWidget {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(60),
                                     color: Colors.indigo),
-                                    child: const Center(child: Icon(Icons.call_outlined, size: 30, color: Colors.white,),),
+                                child: const Center(
+                                  child: Icon(
+                                    Icons.call_outlined,
+                                    size: 30,
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ),
                             )
                           ],
@@ -148,95 +152,98 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-              Container(
-                height: 50,
-                width: double.infinity,
-                decoration:
-                    const BoxDecoration(color: Colors.white, boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey,
-                    offset: Offset(0.3, 0.5),
-                    blurRadius: 5.0,
-                    spreadRadius: 1.0,
-                  ),
-                ]),
-                // color: Colors.grey.shade400,
-                child: const Padding(
-                  padding: EdgeInsets.only(left: 80, right: 80),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      //! ------------- Container with verticalDivider --------------- !//
-                      Text(
-                        'Photos',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w300),
-                      ),
-                      VerticalDivider(thickness: 2, color: Colors.grey),
-                      Text(
-                        'Videos',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w300),
-                      ),
-                      //! ------------- Container with verticalDivider close --------------- !//
-                    ],
+
+                /////////
+
+                Container(
+                  height: 50,
+                  width: double.infinity,
+                  decoration:
+                      const BoxDecoration(color: Colors.white, boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      offset: Offset(0.3, 0.3),
+                      blurRadius: 4.0,
+                      spreadRadius: 1.0,
+                    ),
+                  ]),
+                  // color: Colors.grey.shade400,
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 70, right: 80),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        //! ------------- Container with verticalDivider --------------- !//
+                        Text(
+                          'Photos',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w300),
+                        ),
+                        VerticalDivider(thickness: 2, color: Colors.grey),
+                        Text(
+                          'Videos',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w300),
+                        ),
+                        //! ------------- Container with verticalDivider close --------------- !//
+                      ],
+                    ),
                   ),
                 ),
-              ),
 
-              //! --------- Scrollable Conatiner ---------------!//
+                //! --------- Scrollable Conatiner ---------------!//
 
-              Container(
-                margin: const EdgeInsets.all(10),
-                width: 400,
-                //height: 700,
-                height: MediaQuery.of(context).size.height * 0.7,
-                color: Colors.white,
-                child: GridView.builder(
-                    scrollDirection: Axis.vertical,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      crossAxisSpacing: 1,
-                      mainAxisSpacing: 1,
-                    ),
-                    itemCount: 12,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        //height: 140,
-                        width: 100,
-                        //color: Colors.green,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            image: const DecorationImage(
-                                image: NetworkImage(kProfileImage),
-                                fit: BoxFit.cover)),
-                        margin: const EdgeInsets.only(
-                            left: 3, right: 3, top: 2, bottom: 0),
-                        child: const Row(
-                          children: [
-                            TIconsandText(
-                                icon: Icons.favorite_outline_sharp,
-                                text: '15.3K',
-                                size: 20),
-                            SizedBox(height: 10),
-                            TIconsandText(
-                                icon: Icons.comment_outlined,
-                                text: '200',
-                                size: 20),
-                          ],
-                        ),
-                      );
-                    }),
-              ),
+                Container(
+                  margin: const EdgeInsets.all(10),
+                  width: 400,
+                  //height: 700,
+                  height: MediaQuery.of(context).size.height * 0.4,
+                  color: Colors.white,
+                  child: GridView.builder(
+                      scrollDirection: Axis.vertical,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        crossAxisSpacing: 1,
+                        mainAxisSpacing: 1,
+                      ),
+                      itemCount: 12,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          //height: 140,
+                          width: 100,
+                          //color: Colors.green,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: const DecorationImage(
+                                  image: NetworkImage(kProfileImage),
+                                  fit: BoxFit.cover)),
+                          margin: const EdgeInsets.only(
+                              left: 3, right: 3, top: 2, bottom: 0),
+                          child: const Row(
+                            children: [
+                              TIconsandText(
+                                  icon: Icons.favorite_outline_sharp,
+                                  text: '15.3K',
+                                  size: 20),
+                              SizedBox(height: 10),
+                              TIconsandText(
+                                  icon: Icons.comment_outlined,
+                                  text: '200',
+                                  size: 20),
+                            ],
+                          ),
+                        );
+                      }),
+                ),
 
-              //! --------------------- Scrollable Container end ---------- !//
-            ],
+                //! --------------------- Scrollable Container end ---------- !//
+              ],
+            ),
           ),
         ),
       ),
