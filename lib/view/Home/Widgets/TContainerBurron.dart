@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 class TContainerButton extends StatelessWidget {
@@ -5,10 +6,11 @@ class TContainerButton extends StatelessWidget {
     Key? key,
     required this.height,
     required this.width,
-    required this.text,
+     this.text = '',
     required this.radius,
     required this.backgroudColor,
     required this.textColor,
+     this.icons = Icons.safety_check,
   }) : super(key: key);
 
   final double height;
@@ -17,6 +19,7 @@ class TContainerButton extends StatelessWidget {
   final double radius;
   final Color backgroudColor;
   final Color textColor;
+  final IconData icons;
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:seclob_2/view/Home/home_page.dart';
 
-import 'view/main_page/mainPage.dart';
 
 void main() {
   runApp(const MyApp());

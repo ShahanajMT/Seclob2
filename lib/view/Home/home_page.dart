@@ -5,7 +5,7 @@ import 'package:seclob_2/view/Home/Widgets/TContainerBurron.dart';
 import 'package:seclob_2/view/Home/Widgets/TTexts.dart';
 
 import 'Widgets/TIconsandText.dart';
-import 'Widgets/TTabBarView.dart';
+
 import 'Widgets/TTextss.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
             Container(
               height: MediaQuery.of(context).size.height * 0.6,
               width: MediaQuery.of(context).size.width,
-              color: Colors.red,
+              color: Colors.white,
               child: Padding(
                 padding: const EdgeInsets.all(20),
                 child: Container(
@@ -37,8 +37,20 @@ class HomePage extends StatelessWidget {
                       const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          TTabBarView(icons: Icons.arrow_forward_ios_outlined),
-                          TTabBarView(icons: Icons.more_horiz_outlined),
+                          // TTabBarView(icons: Icons.arrow_forward_ios_outlined),
+                          // TTabBarView(icons: Icons.more_horiz_outlined),
+
+                          CircleAvatar(
+                            radius: 20,
+                            backgroundImage:
+                                AssetImage('assets/images/arrow_forword.png'),
+                          ),
+
+                          CircleAvatar(
+                            radius: 20,
+                            backgroundImage:
+                                AssetImage('assets/images/menu_horiz.png'),
+                          ),
                         ],
                       ),
                       //! -------------- TabBar Close-------------------!//
@@ -51,7 +63,7 @@ class HomePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           CircleAvatar(
-                              backgroundImage: NetworkImage(kProfileImage),
+                              backgroundImage: AssetImage('assets/images/Mask group.png'),
                               radius: 60),
                           TTexts(text1: '50', text2: 'Post'),
                           TTexts(text1: '564', text2: 'Following'),
@@ -61,13 +73,13 @@ class HomePage extends StatelessWidget {
                       const SizedBox(height: 10),
                       //! -------------------- Close --------------------!//
                       const TTextss(
-                          text: 'ShahanajShanu',
+                          text: 'Rayan Moon',
                           textColor: Colors.indigo,
                           fontWeight: FontWeight.w400,
                           size: 20),
                       const SizedBox(height: 7),
                       TTextss(
-                          text: 'Flutter Developer',
+                          text: 'Photography',
                           textColor: Colors.indigo.shade300,
                           fontWeight: FontWeight.w300,
                           size: 17),
@@ -107,6 +119,8 @@ class HomePage extends StatelessWidget {
                               textColor: Colors.white,
                             ),
                           ),
+
+                         
                           Expanded(
                             child: CircleAvatar(
                               radius: 30,
@@ -132,7 +146,15 @@ class HomePage extends StatelessWidget {
             Container(
               height: 50,
               width: double.infinity,
-              color: Colors.yellow,
+              decoration: const BoxDecoration(color: Colors.white, boxShadow: [
+                BoxShadow(
+                  color: Colors.black,
+                  offset: Offset(0.5, 0.5),
+                  blurRadius: 5.0,
+                  spreadRadius: 1.0,
+                ),
+              ]),
+              // color: Colors.grey.shade400,
               child: const Padding(
                 padding: EdgeInsets.only(left: 80, right: 80),
                 child: Row(
@@ -146,7 +168,7 @@ class HomePage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.w300),
                     ),
-                    VerticalDivider(thickness: 2, color: Colors.green),
+                    VerticalDivider(thickness: 2, color: Colors.grey),
                     Text(
                       'Videos',
                       style: TextStyle(
@@ -166,7 +188,7 @@ class HomePage extends StatelessWidget {
               margin: const EdgeInsets.all(10),
               width: 500,
               height: MediaQuery.of(context).size.height * 0.67,
-              color: Colors.cyan,
+              color: Colors.white,
               child: GridView.builder(
                 scrollDirection: Axis.vertical,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
